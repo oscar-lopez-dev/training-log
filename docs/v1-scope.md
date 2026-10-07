@@ -30,6 +30,7 @@ Decisions for V1 that no published spec or issue captures yet. Terms follow [GLO
 - Unscheduled extra Sessions: every Session comes from the Schedule.
 - Units other than kg, and assisted or negative weights: keeps the Set log simple.
 - Cardio and timed Exercises: everything is logged as weight × reps.
+- Changing a user's timezone: it would move Week boundaries under past Sessions.
 - Equipment or exercise-type attributes in the model: curation is a seed content rule only.
 - Offline mode and PWA sync: V1 is online-only; optimistic UI covers slow connections.
 - Next-load suggestions: Estimated 1RM is a reference metric only.
@@ -51,6 +52,7 @@ Decided:
 - Exercise detail has short technique notes; the image is a deferrable slice with a placeholder and a documented licence source.
 - Set logging uses optimistic UI.
 - DESIGN.md exists before this spec's first UI-heavy slice.
+- The final ticket writes its case study in `docs/case-studies/`.
 
 Open:
 
@@ -65,6 +67,7 @@ Decided:
 - Session history: a list with per-Session detail.
 - Exercise history: recent marks and one trend chart.
 - Estimated 1RM is derived, never stored: Epley formula, shown only for sets of 10 reps or fewer.
+- The final ticket writes its case study in `docs/case-studies/`.
 
 Open:
 
@@ -79,8 +82,8 @@ Open:
 
 **Seed content.** About 25 Exercises and 3 Routine presets with 12 Workouts: 3-day Full Body (A, B, C), 4-day Upper/Lower (Upper A, Lower A, Upper B, Lower B), 5-day Push, Pull, Legs, Upper, Lower. Curation rule: free weights first (barbell, dumbbells, cables, pull-ups, dips); the only machines are leg press, leg extension and leg curl; compound lifts come first in each Workout, followed by a few isolation accessories; abs Exercises are rep-based. The Owner reviews the drafted Exercises and Prescriptions before they are final.
 
-**Demo history seed.** 4-day preset; Routine start is the Monday six Weeks before the current Week; plausible progression; includes one moved Session and one Missed Session; the current Week is partly done relative to today. A fixed random seed means the same date always produces the same data.
+**Demo history seed.** 4-day preset; Routine start is the Monday six Weeks before the current Week; plausible progression; includes one moved Session and one Missed Session; the current Week is partly done relative to today. A fixed random seed means the same date always produces the same data. Open: whether "Try the demo" lets the visitor pick the preset (3, 4 or 5 days), with history seeded for the chosen one.
 
 **DESIGN.md.** Written after the walking skeleton and before the first UI-heavy slice.
 
-**Case-study README.** Completed at the end of V1.
+**Case-study README.** Completed at the end of V1; it summarises each case study in `docs/case-studies/` and links to it.

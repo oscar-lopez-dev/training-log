@@ -1,6 +1,6 @@
 # Sessions are derived per Week from stored facts, and Missed Sessions never carry over
 
-Each Workout is tied to a weekday by the Schedule, and every Week starts again from the first Workout. Sessions are not stored ahead of time: the domain module computes a Week's Sessions and their status (Pending, Completed, Missed) from the Schedule history, the stored Session rows, the Set logs and today. A Session row is persisted only on its first Set log or when it is moved; reading a Week writes nothing. A Pending Session can be moved, any number of times, to a Remaining day of the same Week that has no Session; its Original day never changes.
+Each Workout is tied to a weekday by the Schedule, so a Week's Sessions follow that weekday-to-Workout mapping; a Workout that was not trained is never shifted to a later day or Week. Sessions are not stored ahead of time: the domain module computes a Week's Sessions and their status (Pending, Completed, Missed) from the Schedule history, the stored Session rows, the Set logs and today. A Session row is persisted only on its first Set log or when it is moved; reading a Week writes nothing. A Pending Session can be moved, any number of times, to a Remaining day of the same Week that has no Session; its Original day never changes.
 
 We derive instead of storing because the stored facts (Schedule history, Set logs, moves) are then the single source of truth, so nothing stored can contradict them; planning rules can change without data migrations; and there is no end-of-Week job and no write on read.
 
